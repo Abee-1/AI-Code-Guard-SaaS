@@ -64,7 +64,7 @@ else:
                 headers = {"X-API-Key": st.session_state.api_key}
                 payload = {"code": test_code_input}
                 try:
-                    response = requests.post("http://127.0.0.1:8000/scan", json=payload, headers=headers)
+                    response = requests.post("https://ai-code-guard-api.onrender.com/scan", json=payload, headers=headers)
                     if response.status_code == 200:
                         data = response.json().get("analysis", {})
                         if data.get("vulnerability_found"):
