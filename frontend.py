@@ -1,5 +1,15 @@
 ﻿import streamlit as st
 import requests
+import streamlit as st
+import requests
+# 1. Update this import line to include init_db
+from database import authenticate_user, init_db
+
+# 2. Add this line right below it to auto-create your tables on the cloud server
+init_db()
+
+st.set_page_config(page_title="AI Code Guard Portal", layout="wide")
+# ... (Leave absolutely everything else below this exactly the same!)
 from database import authenticate_user
 
 st.set_page_config(page_title="AI Code Guard Portal", layout="wide")
